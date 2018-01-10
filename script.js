@@ -1,10 +1,7 @@
 $(document).ready(function(){
 $('.message').click(function(){
    $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
-});
-});
-$(document).ready(function()
-{    $("#results").click(function() {
+$("#results").click(function() {
 
 if (!$("input[@name=q1]:checked").val() ||
 !$("input[@name=q2]:checked").val() ||
@@ -36,5 +33,6 @@ var cat8 = ($("input[@name=q8]:checked").val() != "7");
 
 var cat9 = ($("input[@name=q9]:checked").val() != "8");
 
-var cat10 = (!cat1 && !cat2 && !cat3 && !cat4 && !cat5 && !cat6 && !cat7 && !cat8 && !cat9); var categories = [];
+var cat10 = (!cat1 && !cat2 && !cat3 && !cat4 && !cat5 && !cat6 && !cat7 && !cat8 && !cat9);
 alert cat10;
+});});
