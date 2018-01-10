@@ -107,7 +107,11 @@ img {
   margin:auto;
   height:30%;
   width:30%;
+  border: 5px solid black;
 }
 label {
   margin-right: 4em;
+}
+results {
+  text-align:center
 }
