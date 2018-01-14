@@ -112,6 +112,6 @@ img {
 label {
   margin-right: 4em;
 }
-results {
-  text-align:center
+#results {
+  text-align: center;
 }
