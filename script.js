@@ -44,7 +44,7 @@ $('.message').click(function(){
     answears++
   };
   var score = 'You answered ' + answears + '/9 correctly!';
-$("#categorylist").text(score);
-$("#categorylist").show("slow");
+$("#result").text(score);
+$("#result").show("slow");
   }
       });});
