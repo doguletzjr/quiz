@@ -1,8 +1,8 @@
 $(document).ready(function(){
 $('.message').click(function(){
    $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
-  });
-  $("#results").click(function() {
+ });
+ $("#results").click(function() {
   if (!$("input[@name=q1]:checked").val() ||
   !$("input[@name=q2]:checked").val() ||
   !$("input[@name=q3]:checked").val() ||
@@ -15,33 +15,33 @@ $('.message').click(function(){
   ) {
   alert("You're not done yet!");
   } else {
-  var answears = 0;
+  var answers = 0;
   if ($("input[@name=q1]:checked").val() == "3"){
-    answears++
+    answers++
   };
   if ($("input[@name=q2]:checked").val() == "8"){
-    answears++
+    answers++
   };
   if ($("input[@name=q3]:checked").val() == "4"){
-    answears++
+    answers++
   };
   if ($("input[@name=q4]:checked").val() == "8"){
-    answears++
+    answers++
   };
   if ($("input[@name=q5]:checked").val() == "4"){
-    answears++
+    answers++
   };
   if ($("input[@name=q6]:checked").val() == "8"){
-    answears++
+    answers++
   };
   if ($("input[@name=q7]:checked").val() == "2"){
-    answears++
+    answers++
   };
   if ($("input[@name=q8]:checked").val() == "7"){
-    answears++
+    answers++
   };
   if ($("input[@name=q9]:checked").val() == "8"){
-    answears++
+    answers++
   };
   var score = 'You answered ' + answears + '/9 correctly!';
 $("#result").text(score);
