@@ -112,6 +112,10 @@ img {
 label {
   margin-right: 4em;
 }
-.results {
-  text-align: center;
+.results{
+  display:flex;
+  justify-content: center;
+}
+.results button:hover,.results button:active,.results button:focus {
+  background-color: #b3bbc9;
 }
