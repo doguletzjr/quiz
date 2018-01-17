@@ -47,4 +47,33 @@ $('.message').click(function(){
 $(".results").text(score);
 $(".results").show("slow");
   }
-      });});
+      });
+      (function(){  // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyBJpIuAiESFuSKxcNkd1KMGpi4CKeHhgSU",
+          authDomain: "quiz-a68ad.firebaseapp.com",
+          databaseURL: "https://quiz-a68ad.firebaseio.com",
+          projectId: "quiz-a68ad",
+          storageBucket: "quiz-a68ad.appspot.com",
+          messagingSenderId: "533066696037"
+        };
+        firebase.initialeApp(config);
+        // Get Elements
+    const auth = firebase.auth();
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
+    const username = document.getElementById('username');
+    const LogIn= document.getElementById('LogIn');
+    const SignUp= document.getElementById('SignUp');
+
+    LogIn.addEventListener('click', e => {
+      const txtusername = username.value;
+      const txtpass = password.value;
+      const auth = firebase.auth();
+      // Sign in
+      const promise = auth.SignInWithUsernameAndPassword(username, password);
+      promise.catch(e => console.log(e.message));
+    });
+
+
+});});

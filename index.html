@@ -8,6 +8,9 @@
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script type='text/javascript' src='script.js'></script>
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase-database.js"></script>
 </head>
 <body>
   <div class="header">
@@ -19,13 +22,13 @@
           <input type="text" type="username" placeholder="username"/>
           <input type="password" type="password" placeholder="password"/>
           <input type="text" type="email" placeholder="email address"/>
-          <button>create</button>
+          <button id="SignUp">create</button>
           <p class="message">Already registered? <a href="#">Sign In</a></p>
         </form>
         <form class="login-form">
           <input type="text" type="username" placeholder="username"/>
           <input type="password" type="password" placeholder="password"/>
-          <button>login</button>
+          <button id="LogIn">login</button>
           <p class="message">Not registered? <a href="#">Create an account</a></p>
         </form>
       </div>
@@ -138,4 +141,5 @@
 </div>
 </div>
 </body>
+<script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
 </html>
