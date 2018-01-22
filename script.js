@@ -49,7 +49,7 @@ $(".results").show("slow");
   }
       });
       (function(){  // Initialize Firebase
-        var config = {
+        const config = {
           apiKey: "AIzaSyBJpIuAiESFuSKxcNkd1KMGpi4CKeHhgSU",
           authDomain: "quiz-a68ad.firebaseapp.com",
           databaseURL: "https://quiz-a68ad.firebaseio.com",
@@ -57,7 +57,7 @@ $(".results").show("slow");
           storageBucket: "quiz-a68ad.appspot.com",
           messagingSenderId: "533066696037"
         };
-        firebase.initialeApp(config);
+        firebase.initializeApp(config);
         // Get Elements
     const auth = firebase.auth();
     const email = document.getElementById('email');
@@ -65,6 +65,7 @@ $(".results").show("slow");
     const username = document.getElementById('username');
     const LogIn= document.getElementById('LogIn');
     const SignUp= document.getElementById('SignUp');
+
 
     LogIn.addEventListener('click', e => {
       const txtusername = username.value;
@@ -74,6 +75,20 @@ $(".results").show("slow");
       const promise = auth.SignInWithUsernameAndPassword(username, password);
       promise.catch(e => console.log(e.message));
     });
-
-
-});});
+    SignUp.addEventListener('click', e => {
+      const txtemail = email.value;
+      const txtusername = username.value;
+      const txtpass = password.value;
+      const auth = firebase.auth();
+      // Sign in
+      const promise = auth.SignInWithUsernameAndPassword(username, password);
+      promise.catch(e => console.log(e.message));
+});
+  //realtime listener
+  firebase.auth().onAtuhStateChanged(firebaseUser => {
+    if (firebaseUser) {
+      console.log(firebaseUser);
+    } else {
+      console.log('not logged in');
+  };
+});});});
