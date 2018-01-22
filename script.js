@@ -49,7 +49,7 @@ $(".results").show("slow");
   }
       });
       (function(){  // Initialize Firebase
-        const config = {
+        var config = {
           apiKey: "AIzaSyBJpIuAiESFuSKxcNkd1KMGpi4CKeHhgSU",
           authDomain: "quiz-a68ad.firebaseapp.com",
           databaseURL: "https://quiz-a68ad.firebaseio.com",
