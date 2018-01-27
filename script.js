@@ -59,18 +59,18 @@ $(function(){  // Initialize Firebase
         };
         firebase.initializeApp(config);
         // Get Elements
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const LogIn= document.getElementById('LogIn').value;
-    const SignUp= document.getElementById('SignUp').value;
-    const Logout= document.getElementById('Logout').value;
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
+    const LogIn= document.getElementById('LogIn');
+    const SignUp= document.getElementById('SignUp');
+    const Logout= document.getElementById('Logout');
 
     LogIn.addEventListener('click', e => {
       const txtEmail = email.value;
       const txtPass = password.value;
       const auth = firebase.auth();
       // Sign in
-      const promise = auth.signInWithEmailAndPassword(email, password);
+      const promise = auth.signInWithEmailAndPassword(txtEmail, txtPass);
       promise.catch(e => console.log(e.message));
     });
     SignUp.addEventListener('click', e => {
@@ -78,7 +78,16 @@ $(function(){  // Initialize Firebase
       const txtPass = password.value;
       const auth = firebase.auth();
       // Sign in
-      const promise = auth.createUserWithEmailAndPassword(email, password);
+      const promise = auth.createUserWithEmailAndPassword(txtEmail, txtPass);
       promise.catch(e => console.log(e.message));
+    });
 
-});});});
+    firebase.auth().onAuthStateChanged(firebaseUser => {
+      if(firebaseUser) {
+        $('login-page').hide();
+        console.log('firebaseUser');
+      } else {
+        console.log('not logged in')
+      }
+    });
+});});
