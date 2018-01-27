@@ -48,7 +48,7 @@ $(".results").text(score);
 $(".results").show("slow");
   }
       });
-      (function(){  // Initialize Firebase
+$(function(){  // Initialize Firebase
         var config = {
           apiKey: "AIzaSyBJpIuAiESFuSKxcNkd1KMGpi4CKeHhgSU",
           authDomain: "quiz-a68ad.firebaseapp.com",
@@ -59,36 +59,27 @@ $(".results").show("slow");
         };
         firebase.initializeApp(config);
         // Get Elements
-    const auth = firebase.auth();
     const email = document.getElementById('email');
     const password = document.getElementById('password');
-    const username = document.getElementById('username');
     const LogIn= document.getElementById('LogIn');
     const SignUp= document.getElementById('SignUp');
+    const btnLogout= document.getElementById('Logout');
 
 
     LogIn.addEventListener('click', e => {
-      const txtusername = username.value;
-      const txtpass = password.value;
+      const txtEmail = email.value;
+      const txtPass = password.value;
       const auth = firebase.auth();
       // Sign in
-      const promise = auth.SignInWithUsernameAndPassword(username, password);
+      const promise = auth.signInWithEmailAndPassword(email, password);
       promise.catch(e => console.log(e.message));
     });
     SignUp.addEventListener('click', e => {
-      const txtemail = email.value;
-      const txtusername = username.value;
-      const txtpass = password.value;
+      const txtEmail = email.value;
+      const txtPass = password.value;
       const auth = firebase.auth();
       // Sign in
-      const promise = auth.SignInWithUsernameAndPassword(username, password);
+      const promise = auth.createUserWithEmailAndPassword(email, password);
       promise.catch(e => console.log(e.message));
-});
-  //realtime listener
-  firebase.auth().onAtuhStateChanged(firebaseUser => {
-    if (firebaseUser) {
-      console.log(firebaseUser);
-    } else {
-      console.log('not logged in');
-  };
+
 });});});
