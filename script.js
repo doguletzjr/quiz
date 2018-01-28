@@ -89,11 +89,17 @@ $(function(){  // Initialize Firebase
 
     firebase.auth().onAuthStateChanged(firebaseUser => {
       if(firebaseUser) {
+        $("body").css("background", "white");
         $('#login-page').hide();
         $('#LogOut').show();
         $('#quiz-form').show();
+        $('#logo').show();
+        $('#header').hide();
         console.log('firebaseUser');
       } else {
+        $("body").css("background", "linear-gradient(to left, #5f4ea2, #321d84)");
+        $('#header').show();
+        $('#logo').hide();
         $('#quiz-form').hide();
         $('#LogOut').hide();
         $('#login-page').show();

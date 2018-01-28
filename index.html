@@ -14,8 +14,9 @@
   <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-database.js"></script>
 </head>
 <body>
-  <div class="header" id="header">
-    <h1>Raven matrices quiz</h1>
+  <div class="header">
+    <h1 id="header">Raven matrices quiz</h1>
+    <img src="./images/Raven.png" alt="Logo" id="logo">
   </div>
     <div class="login-page" id="login-page">
       <div class="form">
@@ -34,9 +35,6 @@
       </div>
     </div>
     <div class="quiz" id="quiz">
-      <div class="logOut">
-        <button id="LogOut"> Log out</button>
-      </div>
       <div class="quiz-form" id = "quiz-form">
         <img src="./images/1.jpg" alt="Raven matrices no.1">
         <ul class="answers">
@@ -140,7 +138,9 @@
         <div class="results">
           <button>Results</button>
         </div>
-
+        <div class="logOut">
+          <button id="LogOut"> Log out</button>
+        </div>
 </div>
 </div>
 </body>

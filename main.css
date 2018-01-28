@@ -87,7 +87,6 @@
 body {
   background: linear-gradient(to left, #5f4ea2, #321d84);
   font-family: "Roboto", sans-serif;
-
 }
 h1 {
   font-family: "Roboto", sans-serif;
@@ -102,9 +101,10 @@ ul {
   background-color: #FFFFFF;
 }
 img {
-  padding-top: 50px;
+  margin-top: 3em;
   display:block;
-  margin:auto;
+  margin-left: auto;
+  margin-right: auto;
   height:30%;
   width:30%;
   border: 5px solid black;
@@ -118,4 +118,18 @@ label {
 }
 .results button:hover,.results button:active,.results button:focus {
   background-color: #b3bbc9;
+}
+#logo {
+  border: none;
+  display: inline;
+  position:absolute;
+  top: 0px;
+  left: 0px;
+  height: 18.75em;
+  width: 18.75em;
+  margin: 0px;
+}
+.logOut{
+  position:relative;
+  margin: auto;
 }
