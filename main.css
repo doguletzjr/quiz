@@ -133,6 +133,6 @@ label {
   margin: 0px;
 }
 .logOut{
-  position:relative;
-  margin: auto;
+  position:absolute;
+  right: 40em;
 }
