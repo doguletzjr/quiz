@@ -119,6 +119,9 @@ label {
 .results button:hover,.results button:active,.results button:focus {
   background-color: #b3bbc9;
 }
+.logOut button:hover,.logOut button:active,.logOut button:focus {
+  background-color: #b3bbc9;
+}
 #logo {
   border: none;
   display: inline;
