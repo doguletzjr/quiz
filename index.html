@@ -14,27 +14,30 @@
   <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-database.js"></script>
 </head>
 <body>
-  <div class="header">
+  <div class="header" id="header">
     <h1>Raven matrices quiz</h1>
   </div>
-    <div class="login-page">
+    <div class="login-page" id="login-page">
       <div class="form">
         <form class="register-form">
-          <input type="text" id="email" placeholder="email"/>
-          <input type="password" id="password" placeholder="password"/>
+          <input type="text" id="email-register" placeholder="email"/>
+          <input type="password" id="password-register" placeholder="password"/>
           <button id="SignUp">create</button>
           <p class="message">Already registered? <a href="#">Sign In</a></p>
         </form>
         <form class="login-form">
-          <input type="text" id="`email`" placeholder="email"/>
-          <input type="password" id="password" placeholder="password"/>
+          <input type="text" id="email-login" placeholder="email"/>
+          <input type="password" id="password-login" placeholder="password"/>
           <button id="LogIn">login</button>
           <p class="message">Not registered? <a href="#">Create an account</a></p>
         </form>
       </div>
     </div>
-    <div class="quiz">
-      <div class="quiz-form">
+    <div class="quiz" id="quiz">
+      <div class="logOut">
+        <button id="LogOut"> Log out</button>
+      </div>
+      <div class="quiz-form" id = "quiz-form">
         <img src="./images/1.jpg" alt="Raven matrices no.1">
         <ul class="answers">
             <input type="radio" name="q1" value="1" id="q11"><label for="q11">1</label>

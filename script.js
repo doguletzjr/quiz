@@ -59,35 +59,45 @@ $(function(){  // Initialize Firebase
         };
         firebase.initializeApp(config);
         // Get Elements
-    const email = document.getElementById('email');
-    const password = document.getElementById('password');
+    const emailRegister = document.getElementById('email-register');
+    const passwordRegister = document.getElementById('password-register');
+    const emailLogin = document.getElementById('email-login');
+    const passwordLogin = document.getElementById('password-login');
     const LogIn= document.getElementById('LogIn');
     const SignUp= document.getElementById('SignUp');
     const Logout= document.getElementById('Logout');
 
     LogIn.addEventListener('click', e => {
-      const txtEmail = email.value;
-      const txtPass = password.value;
+      const txtEmail = emailLogin.value;
+      const txtPass = passwordLogin.value;
       const auth = firebase.auth();
       // Sign in
       const promise = auth.signInWithEmailAndPassword(txtEmail, txtPass);
       promise.catch(e => console.log(e.message));
     });
     SignUp.addEventListener('click', e => {
-      const txtEmail = email.value;
-      const txtPass = password.value;
+      const txtEmail = emailRegister.value;
+      const txtPass = passwordRegister.value;
       const auth = firebase.auth();
       // Sign in
       const promise = auth.createUserWithEmailAndPassword(txtEmail, txtPass);
       promise.catch(e => console.log(e.message));
     });
+    LogOut.addEventListener('click', e => {
+      firebase.auth().signOut();
+    });
 
     firebase.auth().onAuthStateChanged(firebaseUser => {
       if(firebaseUser) {
-        $('login-page').hide();
+        $('#login-page').hide();
+        $('#LogOut').show();
+        $('#quiz-form').show();
         console.log('firebaseUser');
       } else {
-        console.log('not logged in')
+        $('#quiz-form').hide();
+        $('#LogOut').hide();
+        $('#login-page').show();
+        console.log('not logged in');
       }
     });
 });});
